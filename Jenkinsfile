@@ -19,7 +19,7 @@ pipeline{
                         def server = Artifactory.newServer(url: 'http://13.207.51.143:8081/artifactory/', credentialsId: 'jfrog')
                         def rtMaven = Artifactory.newMavenBuild()
                         //rtMaven.deployer server: server, releaseRepo: 'libs-release/', snapshotRepo: 'libs-snapshot/'
-                        rtMaven.deployer server: server, releaseRepo: 'maven/', snapshotRepo: 'maven/'
+                        rtMaven.deployer server: server, releaseRepo: 'sagar/', snapshotRepo: 'sagar/'
                         rtMaven.tool = 'maven'
                         rtMaven.run(pom: 'pom.xml', goals: 'clean install')
                     }
