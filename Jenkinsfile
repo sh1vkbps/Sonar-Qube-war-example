@@ -18,8 +18,8 @@ pipeline{
                     script {
                         def server = Artifactory.newServer(url: 'http://15.206.88.119:8081/artifactory/', credentialsId: 'artifactory')
                         def rtMaven = Artifactory.newMavenBuild()
-                        //rtMaven.deployer server: server, releaseRepo: 'libs-release/', snapshotRepo: 'libs-snapshot/'
-                        rtMaven.deployer server: server, releaseRepo: 'sk/', snapshotRepo: 'sk/'
+                        rtMaven.deployer server: server, releaseRepo: 'libs-release/', snapshotRepo: 'libs-snapshot/'
+                        //rtMaven.deployer server: server, releaseRepo: 'sk/', snapshotRepo: 'sk/'
                         rtMaven.tool = 'maven'
                         rtMaven.run(pom: 'pom.xml', goals: 'clean install')
                     }
