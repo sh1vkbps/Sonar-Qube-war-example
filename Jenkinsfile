@@ -4,7 +4,7 @@ pipeline{
     stages{
        /*stage('Git Checkout Stage'){
             steps{
-                git branch: 'main', url: 'https://github.com/tranju664/Sonar-Qube-war-example.git'
+                git branch: 'main', url: 'https://github.com/sh1vkbps/Sonar-Qube-war-example.git'
             }
          }*/       
        stage('Build Stage'){
@@ -19,7 +19,7 @@ pipeline{
                         def server = Artifactory.newServer(url: 'http://15.206.88.119:8081/artifactory/', credentialsId: 'artifactory')
                         def rtMaven = Artifactory.newMavenBuild()
                         //rtMaven.deployer server: server, releaseRepo: 'libs-release/', snapshotRepo: 'libs-snapshot/'
-                        rtMaven.deployer server: server, releaseRepo: 'sagar/', snapshotRepo: 'sagar/'
+                        rtMaven.deployer server: server, releaseRepo: 'sk/', snapshotRepo: 'sk/'
                         rtMaven.tool = 'maven'
                         rtMaven.run(pom: 'pom.xml', goals: 'clean install')
                     }
